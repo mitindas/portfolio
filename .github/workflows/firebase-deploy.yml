@@ -1,0 +1,25 @@
+name: Deploy to Firebase Hosting
+
+# This tells GitHub to run this workflow every time you push to the 'main' branch
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Downloads your code from the GitHub repo
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Deploys to Firebase using your secret key
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_TOKEN }}
+          channelId: live
+          projectId: "mitin-das" # <-- CHANGE THIS!
