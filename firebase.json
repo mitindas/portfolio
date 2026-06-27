@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "mitin0",
+    "public": "root",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
