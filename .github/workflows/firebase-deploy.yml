@@ -23,5 +23,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_TOKEN }}
           channelId: live
           projectId: "mitin-das" 
-          force: true # Firebase API bug, not my fault it thinks 
-                      # the Github release is the same as previous :/
+          node-version: "22.23.1" # NodeJS bug
