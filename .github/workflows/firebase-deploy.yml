@@ -15,6 +15,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.1'
+
       # Deploys to Firebase using key
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -23,4 +28,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_TOKEN }}
           channelId: live
           projectId: "mitin-das" 
-          node-version: "22.23.1" # NodeJS bug
